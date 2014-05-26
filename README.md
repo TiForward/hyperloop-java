@@ -1,4 +1,4 @@
-# Hyperloop for Java ∞ [![Build Status](https://magnum.travis-ci.com/appcelerator/hyperloop-android.svg?token=xjwxUDk3aUJaLhguTqyB&branch=master)](https://magnum.travis-ci.com/appcelerator/hyperloop-android)
+# Hyperloop for Java ∞ [![Build Status](https://magnum.travis-ci.com/appcelerator/hyperloop-java.svg?token=xjwxUDk3aUJaLhguTqyB&branch=master)](https://magnum.travis-ci.com/appcelerator/hyperloop-java)
 
 Hyperloop is a next-generation compiler that converts JavaScript source code into native code for targeting different native OS platforms. 
 
