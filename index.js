@@ -1,5 +1,5 @@
 module.exports = {
-	platform: 'java',
+	name: 'java',
 	defaultOptions: {
 		environment: 'dev',
 		appid: 'com.test.app'
