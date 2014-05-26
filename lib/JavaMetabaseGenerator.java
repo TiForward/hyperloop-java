@@ -36,7 +36,7 @@ public class JavaMetabaseGenerator
      * this is a regular expression of packages that we want to blacklist and not include in the output
      */
     private static final Pattern blacklist = Pattern
-            .compile("^(javax\\/|com\\/sun|com\\/oracle|jdk\\/internal|org\\/apache\\/bcel|org\\/jcp|org\\/json|org\\/ietf|sun\\/|com\\/apple|quicktime\\/|apple\\/|com\\/oracle\\/jrockit|oracle\\/jrockit|sunw\\/|org\\/omg|java\\/awt|java\\/applet|junit\\/|edu\\/umd\\/cs\\/findbugs)");
+            .compile("^(javax\\/|com\\/sun|com\\/oracle|jdk\\/internal|org\\/apache\\/bcel|org\\/jcp|org\\/json|org\\/ietf|sun\\/|com\\/apple|quicktime\\/|apple\\/|com\\/oracle\\/jrockit|oracle\\/jrockit|sunw\\/|org\\/omg|java\\/awt|java\\/applet|junit\\/|edu\\/umd\\/cs\\/findbugs|orgpath\\/icedtea)");
 
     /**
      * enumerate over a zip/jar and load up it's classes
