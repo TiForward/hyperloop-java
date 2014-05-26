@@ -1,4 +1,4 @@
-# Hyperloop for Java ∞ [![Build Status](https://magnum.travis-ci.com/appcelerator/hyperloop-java.svg?token=xjwxUDk3aUJaLhguTqyB&branch=master)](https://magnum.travis-ci.com/appcelerator/hyperloop-java)
+# Hyperloop for Java ∞ [![Build Status](https://travis-ci.org/appcelerator/hyperloop-java.svg)](https://travis-ci.org/appcelerator/hyperloop-java)
 
 Hyperloop is a next-generation compiler that converts JavaScript source code into native code for targeting different native OS platforms. 
 
@@ -9,7 +9,7 @@ This is the Java backend for running Hyperloop using the Java language.
 ## Requirements
 
 * [Node.js](http://nodejs.org/) >= 0.10.15
-* Java JDK
+* Java JDK 1.7+
 
 ## Documentation & Community
 
