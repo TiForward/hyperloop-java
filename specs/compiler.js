@@ -25,7 +25,6 @@ describe("Java compiler", function() {
 	});
 
 	it("should look up type hierarchy for methods",function(done) {
-		this.timeout(10000);
 
 		metabase.loadMetabase(null, {force:true, platform:'java', cacheDir:TMP}, function(err,json){
 			should.not.exist(err);

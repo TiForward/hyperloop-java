@@ -20,7 +20,6 @@ var should = require('should'),
 describe("Java Compiler front-end", function() {
 
 	before(function(done) {
-		this.timeout(100000);
 
 		wrench.mkdirSyncRecursive(TMP, 0755);
 
@@ -65,6 +64,10 @@ describe("Java Compiler front-end", function() {
 		});
 	});
 
+	afterEach(function(){
+		typelib.reset();
+	});
+
 	after(function(){
 		wrench.rmdirSyncRecursive(TMP);
 	});
@@ -75,7 +78,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should create builtin object", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -93,7 +95,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should use type of variable within context", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -131,7 +132,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should allow redefinition of variable name", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -177,7 +177,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should allow redefinition of variable name multiple times", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -255,7 +254,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should record type of static property", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -294,7 +292,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform class methods correctly", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -325,7 +322,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform class property correctly", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -356,7 +352,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform instance property correctly (simple statement)", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -387,7 +382,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform instance property correctly (assign with var)", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -418,7 +412,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform instance property correctly (chain method after getter)", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -449,7 +442,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform instance property getter correctly (re-assign)", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -480,7 +472,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform instance property chain", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -512,12 +503,7 @@ describe("Java Compiler front-end", function() {
 		done();
 	});
 
-	afterEach(function(){
-		typelib.reset();
-	});
-
 	it("should transform custom class", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -555,7 +541,6 @@ describe("Java Compiler front-end", function() {
 	});
 
 	it("should transform custom class with method overloading", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};
@@ -595,7 +580,6 @@ describe("Java Compiler front-end", function() {
 
 
 	it("should transform method overload command", function(done) {
-		this.timeout(100000);
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
 			state = {};

@@ -12,7 +12,6 @@ var should = require('should'),
 describe("Java metabase", function() {
 
 	before(function(done){
-		this.timeout(10000);
 		wrench.mkdirSyncRecursive(TMP, 0755);
 		done();
 	});
@@ -27,7 +26,6 @@ describe("Java metabase", function() {
 	});
 
 	it("should parse Java standard libraries",function(done) {
-		this.timeout(10000);
 
 		metabase.loadMetabase(null, {force:true, platform:'java', cacheDir:TMP}, function(err,json){
 			should.not.exist(err);
