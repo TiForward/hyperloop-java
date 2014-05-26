@@ -1,7 +1,7 @@
 /*
  * Packager
  */
-var hyperloop = require('hyperloop-common'),
+var	hyperloop = require('../../lib/dev').require('hyperloop-common'),
 	Command = hyperloop.Command;
 
 module.exports = new Command(

@@ -2,7 +2,7 @@
  * Launcher
  */
 var path = require('path'),
-	hyperloop = require('hyperloop-common'),
+	hyperloop = require('../../lib/dev').require('hyperloop-common'),
 	log = hyperloop.log,
 	Command = hyperloop.Command,
 	spawn = require('child_process').spawn,
