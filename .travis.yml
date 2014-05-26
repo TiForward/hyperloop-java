@@ -1,0 +1,7 @@
+language: java
+jdk:
+- oraclejdk7
+- openjdk6
+notifications:
+  flowdock:
+    secure: vQhf9H3CBin/PbXUa3b3ySBUQkcFZAOuaYAWJC5xjfdJia3ZyTYOiRP6vV7fkBjh+o7ZhU2kYWKw/Se3Erku4NM+lhdz1C2xOyHyxx09ciqNZUEXHEJu4dyQqBnOZDvA/MAlQ/AWsVBKHmcRhAefU9X7XuYUDjoBy7RXK3qtgFs=
