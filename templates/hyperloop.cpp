@@ -224,41 +224,6 @@ bool Hyperloop::NativeObject<jobject>::toBoolean(JSContextRef ctx, JSValueRef* e
     return result == JNI_TRUE ? true : false;
 }
 
-/// jint ///
-
-template<>
-void Hyperloop::NativeObject<jint>::release() {}
-
-template<>
-void Hyperloop::NativeObject<jint>::retain() {}
-
-template<>
-bool Hyperloop::NativeObject<jint>::hasInstance(JSContextRef ctx, JSValueRef other, JSValueRef* exception)
-{
-    if (JSValueIsNumber(ctx, other)) {
-        return true;
-    }
-    return false;
-}
-
-template<>
-std::string Hyperloop::NativeObject<jint>::toString(JSContextRef ctx, JSValueRef* exception)
-{
-    return to_string(this->object);
-}
-
-template<>
-double Hyperloop::NativeObject<jint>::toNumber(JSContextRef ctx, JSValueRef* exception)
-{
-    return (double)this->object;
-}
-
-template<>
-bool Hyperloop::NativeObject<jint>::toBoolean(JSContextRef ctx, JSValueRef* exception)
-{
-    return static_cast<bool>(this->object);
-}
-
 /**
  * returns true if b is an instanceof a class
  */
