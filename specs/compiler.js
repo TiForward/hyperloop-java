@@ -13,7 +13,7 @@ var should = require('should'),
 describe("Java compiler", function() {
 
 	before(function(done){
-		this.timeout(10000);
+		this.timeout(30000);
 		wrench.mkdirSyncRecursive(TMP, 0755);
 		metabase.loadMetabase(null, {force:true, platform:'java', cacheDir:TMP}, function(err,json){
 			should.not.exist(err);

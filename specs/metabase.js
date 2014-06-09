@@ -26,7 +26,7 @@ describe("Java metabase", function() {
 	});
 
 	it("should parse Java standard libraries",function(done) {
-
+		this.timeout(30000);
 		metabase.loadMetabase(null, {force:true, platform:'java', cacheDir:TMP}, function(err,json){
 			should.not.exist(err);
 			should.exist(json);
