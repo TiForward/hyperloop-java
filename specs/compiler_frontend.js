@@ -7,11 +7,9 @@ var should = require('should'),
     wrench = require('wrench'),
 	appc = require('node-appc'),
 	_ = require('underscore'),
-	hyperloop = require('hyperloop-common'),
+	hyperloop = require('../lib/dev').require('hyperloop-common'),
 	compiler = hyperloop.compiler.ast,
 	typelib = hyperloop.compiler.type,
-	// compiler = require(path.join(__dirname, '..', '..', 'lib', 'compiler.js')),
-	// typelib = require(path.join(__dirname, '..', '..', 'lib', 'type.js')),
 	java_compiler = require('../lib/compiler'),
 	metabase = require('../lib/metabase'),
     TMP = path.join('.', '_tmp'),
@@ -20,7 +18,7 @@ var should = require('should'),
 describe("Java Compiler front-end", function() {
 
 	before(function(done) {
-
+		this.timeout(30000);
 		wrench.mkdirSyncRecursive(TMP, 0755);
 
 		metabase.loadMetabase(null, {force : true, platform : 'java', cacheDir:TMP}, function(err, json) {
