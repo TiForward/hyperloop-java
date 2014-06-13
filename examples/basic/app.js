@@ -1,18 +1,18 @@
 "use hyperloop"
-var s = new java.lang.String('hello');
+var s = Hyperloop.method('java.lang.String', '<init>(java.lang.String)').call('hello');
 var str = s.toString();
 console.log('str returned:',str);
-var s2 = new java.lang.String(['h','e','l','l','o']);
+var s2 = Hyperloop.method('java.lang.String', '<init>(char[])').call(['h','e','l','l','o']);
 console.log('str from array returned:',s2);
-var b = new java.lang.Boolean(true);
+var b = Hyperloop.method('java.lang.Boolean', '<init>(boolean)').call(true);
 console.log('boolean is',b);
-var d = new java.lang.Double(123);
+var d = Hyperloop.method('java.lang.Double', '<init>(double)').call(123);
 console.log('double is',d);
-var l = new java.lang.Long(456);
+var l = Hyperloop.method('java.lang.Long', '<init>(long)').call(456);
 console.log('long is',l);
-var s = new java.lang.Short(1);
+var s = Hyperloop.method('java.lang.Short', '<init>(short)').call(1);
 console.log('short is',s);
-var i = new java.lang.Integer(9);
+var i = Hyperloop.method('java.lang.Integer', '<init>(int)').call(9);
 console.log('integer is',9);
 
 

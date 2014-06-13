@@ -450,8 +450,8 @@ EXPORTAPI JSValueRef JavaObjectArray_ToJSValue(JSContextRef ctx, jobject instanc
     return result;
 }
 
-EXPORTAPI jobject java_lang_Boolean_constructor_1(JSContextRef ctx, const JSValueRef arguments[], JSValueRef* exception);
-EXPORTAPI jobject java_lang_Double_constructor_1(JSContextRef ctx, const JSValueRef arguments[], JSValueRef* exception);
+EXPORTAPI jobject java_lang_Boolean_constructor__Z_V(JSContextRef ctx, const JSValueRef arguments[], JSValueRef* exception);
+EXPORTAPI jobject java_lang_Double_constructor__D_V(JSContextRef ctx, const JSValueRef arguments[], JSValueRef* exception);
 
 EXPORTAPI jobject JSValueTo_JavaObject(JSContextRef ctx, JSValueRef value, JSValueRef *exception)
 {
@@ -479,12 +479,12 @@ EXPORTAPI jobject JSValueTo_JavaObject(JSContextRef ctx, JSValueRef value, JSVal
     if (JSValueIsBoolean(ctx,value))
     {
         JSValueRef args[] = {value};
-        return java_lang_Boolean_constructor_1(ctx,args,exception);
+        return java_lang_Boolean_constructor__Z_V(ctx,args,exception);
     }
     if (JSValueIsNumber(ctx,value))
     {
         JSValueRef args[] = {value};
-        return java_lang_Double_constructor_1(ctx,args,exception);
+        return java_lang_Double_constructor__D_V(ctx,args,exception);
     }
     return nullptr;
 }
