@@ -510,7 +510,11 @@ EXPORTAPI void JNICALL Java_org_appcelerator_hyperloop_Hyperloop_loadApp
         char buf[len];
         JSStringGetUTF8CString(str, (char *)&buf, len);
         JSStringRelease(str);
+#ifdef __ANDROID__
+        LOGE("%s", buf);
+#else
         LOGE(buf);
+#endif
     }
     if (e.CheckJavaException(HyperloopGlobalContext(), &exception)) {
         LOGD("Java_app_loadApp raised Java exception");
