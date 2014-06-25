@@ -114,7 +114,7 @@ std::string to_string(T value)
 
 namespace Hyperloop
 {
-typedef Hyperloop::NativeObject<jobject *> * NativeObjectJava;
+typedef Hyperloop::NativeObject<jobject> * NativeObjectJava;
     
 static NativeObjectJava ToNativeObjectJava(void* p) {
     return reinterpret_cast<NativeObjectJava>(p);
@@ -154,7 +154,7 @@ bool Hyperloop::NativeObject<jobject>::hasInstance(JSContextRef ctx, JSValueRef 
     auto p = JSObjectGetPrivate(JSValueToObject(ctx,other,0));
     if (p!=nullptr) {
         jclass clazz = env->GetObjectClass(this->object);
-        jobject objectB = *ToNativeObjectJava(p)->getObject();
+        jobject objectB = ToNativeObjectJava(p)->getObject();
         jboolean isInstance = env->IsInstanceOf(objectB, clazz);
         env->DeleteLocalRef(clazz);
         if (env.CheckJavaException(ctx, exception)) {
@@ -265,7 +265,7 @@ bool Hyperloop::JNIEnv::IsInstanceOf(JSContextRef ctx, const char * classname, J
         {
             Hyperloop::JNIEnv env;
             jclass javaClass = env->FindClass(classname);
-            jobject objectB = *ToNativeObjectJava(p)->getObject();
+            jobject objectB = ToNativeObjectJava(p)->getObject();
             jboolean isInstance = env->IsInstanceOf(objectB, javaClass);
             env->DeleteLocalRef(javaClass);
             if (CheckJavaException(ctx, exception)) 
