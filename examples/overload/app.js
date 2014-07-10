@@ -28,7 +28,7 @@ Hyperloop.defineClass(MyClass)
 		}
 	}).build();
 
-var s = Hyperloop.method('java.lang.String', '<init>(java.lang.String)').call('hello');
+var s = new java.lang.String('hello');
 var c = s.charAt(0);
 
 var myClass = new com.test.app.MyClass();

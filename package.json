@@ -43,6 +43,7 @@
     "node-appc": "~0.1.30",
     "async": "~0.2.9",
     "underscore": "1.5.2",
+    "lodash": "2.4.1",
     "wrench": "1.5.4",
     "semver": "2.2.1",
     "uglify-js": "^2.4.13",
