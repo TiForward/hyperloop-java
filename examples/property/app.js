@@ -1,11 +1,11 @@
 "use hyperloop"
 
-var t = Hyperloop.method('java.lang.Thread$State', '<init>(java.lang.String,int)').call('test',1);
+var t = new java.lang.Thread$State('test',1);
 t = t.NEW;
 t = t.NEW.WAITING;
 t = t.NEW.WAITING.TIMED_WAITING;
 
-var e = Hyperloop.method('java.io.InvalidClassException', '<init>(java.lang.String,java.lang.String)').call('MyTestException','class property test');
+var e = new java.io.InvalidClassException('MyTestException','class property test');
 
 var c = e.classname;
 
