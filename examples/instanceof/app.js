@@ -7,7 +7,7 @@ var num=1, str='1', obj={value:'1'}, bool=true,
 
 function assert (value, test, msg) {
 	console.log(
-		(value==test ? '\033[32m✓\033[39m\033[0m ' : '\033[31m✘\033[39m\033[0m') + '\t('+msg+')'
+		(value==test ? '[OK]' : '[NG]') + '\t('+msg+')'
 	);
 }
 
