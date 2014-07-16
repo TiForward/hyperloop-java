@@ -2,7 +2,8 @@ module.exports = {
 	name: 'java',
 	defaultOptions: {
 		environment: 'dev',
-		appid: 'com.test.app'
+		appid: 'com.test.app',
+		skip_ir: true
 	},
 	dirname: __dirname,
 	compiler: require('./lib/compiler'),
