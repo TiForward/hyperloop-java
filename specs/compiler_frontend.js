@@ -375,6 +375,36 @@ describe("Java Compiler front-end", function() {
 		done();
 	});
 
+
+	it("should transform class property inside call", function(done) {
+		var arch = 'android',
+			build_opts = {DEBUG:true,OBFUSCATE:false},
+			state = {};
+		source = '"use hyperloop"\nconsole.log(java.lang.String.CASE_INSENSITIVE_ORDER);';
+
+		should.exist(javaMetabase);
+
+		state.metabase = javaMetabase;
+		state.libfile = 'blah';
+		state.symbols = {};
+		state.obfuscate = false;
+		var ast = compiler.compile({platform:arch}, state, java_compiler, arch, source, 'filename', 'filename.js', build_opts);
+
+		should.exist(state.symbols);
+		state.symbols.should.be.an.Object;
+		CASE_INSENSITIVE_ORDER = _.find(state.symbols, function(value, key) {
+			return value.location.line == 2;
+		});
+		should.exist(CASE_INSENSITIVE_ORDER);
+		CASE_INSENSITIVE_ORDER.type.should.be.eql('statement');
+		CASE_INSENSITIVE_ORDER.metatype.should.be.eql('getter');
+		CASE_INSENSITIVE_ORDER.symbolname.should.be.eql('java_lang_String_Get_CASE_INSENSITIVE_ORDER');
+		CASE_INSENSITIVE_ORDER.class.should.be.eql('java.lang.String');
+		CASE_INSENSITIVE_ORDER.name.should.be.eql('CASE_INSENSITIVE_ORDER');
+
+		done();
+	});
+
 	it("should transform instance property correctly (simple statement)", function(done) {
 		var arch = 'android',
 			build_opts = {DEBUG:true,OBFUSCATE:false},
